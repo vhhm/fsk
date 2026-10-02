@@ -1,0 +1,281 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  background: #070707;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 255, 255, 0.055),
+      transparent 35%
+    ),
+    #070707;
+
+  color: #fff;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+}
+
+.profiles {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.profile-card {
+  width: 230px;
+  min-height: 285px;
+
+  padding: 28px 20px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 20px 60px
+      rgba(0, 0, 0, 0.35),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 28px 70px
+      rgba(0, 0, 0, 0.45),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.06);
+}
+
+.avatar-wrapper {
+  width: 96px;
+  height: 96px;
+
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid
+    rgba(255, 255, 255, 0.08);
+
+  background: #151515;
+
+  user-select: none;
+}
+
+.profile-info {
+  width: 100%;
+
+  margin-top: 17px;
+
+  text-align: center;
+}
+
+.name {
+  width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.3;
+
+  color: #fff;
+}
+
+.username {
+  margin-top: 4px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+}
+
+.badges {
+  width: 100%;
+
+  margin-top: 18px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.badge {
+  width: 26px;
+  height: 26px;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  filter:
+    drop-shadow(
+      0 3px 8px
+      rgba(0, 0, 0, 0.3)
+    );
+
+  transition:
+    transform 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.12);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  animation:
+    loading 1s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .profiles {
+    gap: 14px;
+  }
+
+  .profile-card {
+    width: min(
+      100%,
+      210px
+    );
+
+    min-height: 270px;
+
+    padding: 24px 18px 20px;
+  }
+
+  .avatar-wrapper {
+    width: 88px;
+    height: 88px;
+  }
+
+  .name {
+    font-size: 17px;
+  }
+}
+
